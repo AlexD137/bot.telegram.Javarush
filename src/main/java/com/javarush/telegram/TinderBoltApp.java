@@ -12,9 +12,9 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import java.util.ArrayList;
 
 public class TinderBoltApp extends MultiSessionTelegramBot {
-    public static final String TELEGRAM_BOT_NAME = "super1_java_tinder_bot"; //TODO: добавь имя бота в кавычках
-    public static final String TELEGRAM_BOT_TOKEN = "7443751670:AAEDqPTKD8wCgw-xmonjEYFkkumubEqybAk"; //TODO: добавь токен бота в кавычках
-    public static final String OPEN_AI_TOKEN = "sk-proj-2ddMbnkrUp0r1ZBktBwHT3BlbkFJN9vmd9QH66u8DBihTVMH"; //TODO: добавь токен ChatGPT в кавычках
+    public static final String TELEGRAM_BOT_NAME = "super1_java_tinder_bot";
+    public static final String TELEGRAM_BOT_TOKEN = "7443751670:AAEDqPTKD8wCgw-xmonjEYFkkumubEqybAk";
+    public static final String OPEN_AI_TOKEN = "sk-proj-2ddMbnkrUp0r1ZBktBwHT3BlbkFJN9vmd9QH66u8DBihTVMH";
     private  ChatGPTService chatGPT = new ChatGPTService(OPEN_AI_TOKEN);
     private  DialogMode currentMod = null;
     private ArrayList<String> list = new ArrayList<>();
@@ -27,7 +27,7 @@ public class TinderBoltApp extends MultiSessionTelegramBot {
 
     @Override
     public void onUpdateEventReceived(Update update) {
-        //TODO: основной функционал бота будем писать здесь
+
         String message = getMessageText();
         if (message.equals("/start")){
             currentMod = DialogMode.MAIN;
@@ -150,7 +150,7 @@ public class TinderBoltApp extends MultiSessionTelegramBot {
             }
             return;
         }
-        // command OPENER
+
         if (message.equals("/opener")){
             currentMod = DialogMode.OPENER;
             sendPhotoMessage("opener");
